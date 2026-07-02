@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiteFile — Lightweight File Archiver</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #1a1a1a;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    a { color: #f7931e; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      position: sticky; top: 0; z-index: 99;
+      background: #0f0f0f;
+      border-bottom: 1px solid #333;
+      padding: 0 32px;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 62px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 20px; font-weight: 800; color: #e0e0e0; letter-spacing: -0.5px;
+    }
+    .nav-logo img {
+      height: 34px;
+      width: auto;
+      filter: drop-shadow(0 0 2px rgba(247, 147, 30, 0.3));
+    }
+    .nav-logo span { color: #f7931e; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: #aaa; font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: #f7931e; text-decoration: none; }
+    .nav-dl {
+      background: #f7931e; color: #0f0f0f;
+      font-size: 13px; font-weight: 700;
+      padding: 7px 16px; border-radius: 6px;
+      transition: background .15s;
+    }
+    .nav-dl:hover { background: #ffa94d; text-decoration: none; }
+
+    section { padding: 80px 32px; max-width: 960px; margin: 0 auto; }
+
+    #hero {
+      max-width: 100%;
+      padding: 120px 32px 100px;
+      text-align: center;
+      background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+      border-bottom: 1px solid #333;
+    }
+    #hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      color: #e0e0e0;
+      margin-bottom: 16px;
+    }
+    #hero h1 span { color: #f7931e; }
+    #hero p {
+      font-size: 1.2rem;
+      color: #aaa;
+      max-width: 560px;
+      margin: 0 auto 40px;
+    }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: #f7931e; color: #0f0f0f;
+      font-weight: 700; font-size: 16px;
+      padding: 14px 32px; border-radius: 8px;
+      transition: background .15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: #ffa94d; text-decoration: none; }
+    .btn-ghost {
+      background: transparent; color: #f7931e;
+      font-weight: 700; font-size: 16px;
+      padding: 13px 32px; border-radius: 8px;
+      border: 1.5px solid #444;
+      transition: border-color .15s, color .15s;
+      display: inline-block;
+    }
+    .btn-ghost:hover { border-color: #f7931e; text-decoration: none; }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+    }
+    .hero-stats .stat {
+      text-align: center;
+    }
+    .hero-stats .stat .number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #f7931e;
+      display: block;
+    }
+    .hero-stats .stat .label {
+      font-size: .85rem;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    footer {
+      border-top: 1px solid #2a2a2a;
+      padding: 28px 32px;
+      text-align: center;
+      color: #555;
+      font-size: .82rem;
+    }
+    footer a { color: #777; }
+    footer a:hover { color: #f7931e; }
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin: 8px 0 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hero-stats { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <img src="https://i.ibb.co/PZXQDspk/litefile-logo.png" alt="LiteFile Logo" />
+    <span>Lite</span>File
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="download.html">Download</a></li>
+    <li><a href="premium.html">Premium</a></li>
+    <li><a href="support.html">Support</a></li>
+  </ul>
+  <a href="download.html" class="nav-dl">Download</a>
+</nav>
+
+<div id="hero">
+  <h1>Lite<span>File</span></h1>
+  <p>A lightweight file archiver with a modern dark interface.<br>Free forever. No time limits.</p>
+  <div class="hero-btns">
+    <a href="download.html" class="btn-primary">Download Now</a>
+    <a href="features.html" class="btn-ghost">Explore Features</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="number">50+</span>
+      <span class="label">Archive Formats</span>
+    </div>
+    <div class="stat">
+      <span class="number">1MB</span>
+      <span class="label">Lightweight</span>
+    </div>
+    <div class="stat">
+      <span class="number">100%</span>
+      <span class="label">Free Forever</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div style="margin-bottom:8px;font-size:16px;font-weight:800;color:#666">
+    Lite<span style="color:#f7931e">File</span>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="download.html">Download</a>
+    <a href="premium.html">Premium</a>
+    <a href="support.html">Support</a>
+  </div>
+  <p>
+    <a href="mailto:litefile@proton.me">litefile@proton.me</a>
+    &nbsp;&middot;&nbsp;
+    &copy; 2026 Abdellah Agtaib — LiteFile Project
+  </p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features — LiteFile</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #1a1a1a;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    a { color: #f7931e; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      position: sticky; top: 0; z-index: 99;
+      background: #0f0f0f;
+      border-bottom: 1px solid #333;
+      padding: 0 32px;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 62px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 20px; font-weight: 800; color: #e0e0e0; letter-spacing: -0.5px;
+    }
+    .nav-logo img {
+      height: 34px;
+      width: auto;
+      filter: drop-shadow(0 0 2px rgba(247, 147, 30, 0.3));
+    }
+    .nav-logo span { color: #f7931e; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: #aaa; font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: #f7931e; text-decoration: none; }
+    .nav-dl {
+      background: #f7931e; color: #0f0f0f;
+      font-size: 13px; font-weight: 700;
+      padding: 7px 16px; border-radius: 6px;
+      transition: background .15s;
+    }
+    .nav-dl:hover { background: #ffa94d; text-decoration: none; }
+
+    section { padding: 80px 32px; max-width: 960px; margin: 0 auto; }
+
+    #features h1 {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 900;
+      color: #e0e0e0;
+      margin-bottom: 8px;
+    }
+    #features h1 span { color: #f7931e; }
+    .section-sub { color: #aaa; margin-bottom: 40px; font-size: 1.05rem; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #141414;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+      padding: 24px 22px;
+      transition: border-color .2s, transform .2s;
+    }
+    .card:hover {
+      border-color: #f7931e;
+      transform: translateY(-2px);
+    }
+    .card-icon {
+      font-size: 11px; font-weight: 700; letter-spacing: 1px;
+      color: #f7931e; background: #1f1f1f;
+      display: inline-block; padding: 3px 8px;
+      border-radius: 4px; margin-bottom: 10px;
+      border: 1px solid #2a2a2a;
+    }
+    .card h3 { font-size: 1rem; font-weight: 700; color: #e0e0e0; margin-bottom: 6px; }
+    .card p { font-size: .85rem; color: #aaa; }
+
+    footer {
+      border-top: 1px solid #2a2a2a;
+      padding: 28px 32px;
+      text-align: center;
+      color: #555;
+      font-size: .82rem;
+    }
+    footer a { color: #777; }
+    footer a:hover { color: #f7931e; }
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin: 8px 0 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <img src="https://i.ibb.co/PZXQDspk/litefile-logo.png" alt="LiteFile Logo" />
+    <span>Lite</span>File
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="download.html">Download</a></li>
+    <li><a href="premium.html">Premium</a></li>
+    <li><a href="support.html">Support</a></li>
+  </ul>
+  <a href="download.html" class="nav-dl">Download</a>
+</nav>
+
+<section id="features">
+  <h1>Features</h1>
+  <p class="section-sub">Everything you need in one lightweight app.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">FORMATS</div>
+      <h3>Wide Format Support</h3>
+      <p>ZIP, TAR, GZ, BZ2, XZ natively. RAR, 7z, CAB, ISO, DEB, RPM and more via patool.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">UI</div>
+      <h3>Modern Dark Interface</h3>
+      <p>Clean dark theme with sortable columns, live search, breadcrumb bar and a file-type icon column.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">SPEED</div>
+      <h3>Fast and Lightweight</h3>
+      <p>Single-file executable. Launches in under a second. Minimal memory usage on any machine.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">OPS</div>
+      <h3>Full File Management</h3>
+      <p>Browse, copy, paste, rename, delete, create folders. Ctrl+A, F2, Delete shortcuts built in.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">TEST</div>
+      <h3>Archive Integrity</h3>
+      <p>Test ZIP and TAR archives for corruption with one click before extracting.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">CRC32</div>
+      <h3>CRC32 Calculator</h3>
+      <p>Calculate and display CRC32 checksums for any file directly in the file list.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">PREMIUM</div>
+      <h3>Premium Upgrade</h3>
+      <p>Multi-threaded compression, no trial screen, priority support via litefile@proton.me.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">WINDOWS</div>
+      <h3>Windows Native</h3>
+      <p>Designed for Windows 10/11. Runs as a standalone .exe or from source. No extra dependencies.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">SECURE</div>
+      <h3>Secure & Private</h3>
+      <p>No data collection. No cloud storage. All files stay on your machine.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="margin-bottom:8px;font-size:16px;font-weight:800;color:#666">
+    Lite<span style="color:#f7931e">File</span>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="download.html">Download</a>
+    <a href="premium.html">Premium</a>
+    <a href="support.html">Support</a>
+  </div>
+  <p>
+    <a href="mailto:litefile@proton.me">litefile@proton.me</a>
+    &nbsp;&middot;&nbsp;
+    &copy; 2026 Abdellah Agtaib — LiteFile Project
+  </p>
+</footer>
+
+</body>
+</html>

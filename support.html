@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — LiteFile</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #1a1a1a;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    a { color: #f7931e; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      position: sticky; top: 0; z-index: 99;
+      background: #0f0f0f;
+      border-bottom: 1px solid #333;
+      padding: 0 32px;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 62px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 20px; font-weight: 800; color: #e0e0e0; letter-spacing: -0.5px;
+    }
+    .nav-logo img {
+      height: 34px;
+      width: auto;
+      filter: drop-shadow(0 0 2px rgba(247, 147, 30, 0.3));
+    }
+    .nav-logo span { color: #f7931e; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: #aaa; font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: #f7931e; text-decoration: none; }
+    .nav-dl {
+      background: #f7931e; color: #0f0f0f;
+      font-size: 13px; font-weight: 700;
+      padding: 7px 16px; border-radius: 6px;
+      transition: background .15s;
+    }
+    .nav-dl:hover { background: #ffa94d; text-decoration: none; }
+
+    section { padding: 80px 32px; max-width: 960px; margin: 0 auto; }
+
+    #support h1 {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 900;
+      color: #e0e0e0;
+      margin-bottom: 8px;
+    }
+    #support h1 span { color: #f7931e; }
+    .section-sub { color: #aaa; margin-bottom: 40px; font-size: 1.05rem; }
+
+    .sup-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .sup-card {
+      background: #141414;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+      padding: 28px 24px;
+      transition: border-color .2s;
+    }
+    .sup-card:hover { border-color: #f7931e; }
+    .sup-card .sup-icon {
+      font-size: 32px;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .sup-card .sup-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 1px;
+      color: #f7931e;
+      margin-bottom: 6px;
+    }
+    .sup-card h3 { font-size: 1rem; font-weight: 700;
+      color: #e0e0e0; margin-bottom: 6px; }
+    .sup-card p { font-size: .88rem; color: #aaa; }
+    .sup-card code {
+      display: inline-block;
+      background: #0a0a0a;
+      color: #ffb347;
+      font-family: "Consolas", monospace;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid #2a2a2a;
+    }
+
+    footer {
+      border-top: 1px solid #2a2a2a;
+      padding: 28px 32px;
+      text-align: center;
+      color: #555;
+      font-size: .82rem;
+    }
+    footer a { color: #777; }
+    footer a:hover { color: #f7931e; }
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin: 8px 0 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <img src="https://i.ibb.co/PZXQDspk/litefile-logo.png" alt="LiteFile Logo" />
+    <span>Lite</span>File
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="download.html">Download</a></li>
+    <li><a href="premium.html">Premium</a></li>
+    <li><a href="support.html">Support</a></li>
+  </ul>
+  <a href="download.html" class="nav-dl">Download</a>
+</nav>
+
+<section id="support">
+  <h1>Support</h1>
+  <p class="section-sub">We're one email away.</p>
+
+  <div class="sup-grid">
+    <div class="sup-card">
+      <span class="sup-icon">📧</span>
+      <div class="sup-label">EMAIL</div>
+      <h3>Contact Us</h3>
+      <p>
+        <a href="mailto:litefile@proton.me" style="color:#f7931e;font-weight:700;font-size:1.05rem;">
+          litefile@proton.me
+        </a>
+        <br><br>
+        Premium users get priority responses within 24 hours.
+      </p>
+    </div>
+
+    <div class="sup-card">
+      <span class="sup-icon">🚀</span>
+      <div class="sup-label">QUICK START</div>
+      <h3>Getting Started</h3>
+      <p>
+        Download the installer from the <a href="download.html">Download</a> page.<br><br>
+        Run the <code>.exe</code> and start archiving files instantly.
+      </p>
+    </div>
+
+    <div class="sup-card">
+      <span class="sup-icon">👤</span>
+      <div class="sup-label">AUTHOR</div>
+      <h3>About LiteFile</h3>
+      <p>
+        Created and developed by<br>
+        <strong style="color:#e0e0e0;font-size:1.05rem;">Abdellah Agtaib</strong>
+        <br><br>
+        Built with Python 3 and tkinter.<br>
+        Windows native. Open source.
+      </p>
+    </div>
+
+    <div class="sup-card">
+      <span class="sup-icon">❓</span>
+      <div class="sup-label">FAQ</div>
+      <h3>Common Questions</h3>
+      <p>
+        <strong style="color:#e0e0e0;">Is it really free?</strong><br>
+        Yes! LiteFile is free forever with no time limits.<br><br>
+        <strong style="color:#e0e0e0;">What formats are supported?</strong><br>
+        ZIP, TAR, RAR, 7z, and many more.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="margin-bottom:8px;font-size:16px;font-weight:800;color:#666">
+    Lite<span style="color:#f7931e">File</span>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="download.html">Download</a>
+    <a href="premium.html">Premium</a>
+    <a href="support.html">Support</a>
+  </div>
+  <p>
+    <a href="mailto:litefile@proton.me">litefile@proton.me</a>
+    &nbsp;&middot;&nbsp;
+    &copy; 2026 Abdellah Agtaib — LiteFile Project
+  </p>
+</footer>
+
+</body>
+</html>

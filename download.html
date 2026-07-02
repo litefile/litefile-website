@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download — LiteFile</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #1a1a1a;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    a { color: #f7931e; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      position: sticky; top: 0; z-index: 99;
+      background: #0f0f0f;
+      border-bottom: 1px solid #333;
+      padding: 0 32px;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 62px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 20px; font-weight: 800; color: #e0e0e0; letter-spacing: -0.5px;
+    }
+    .nav-logo img {
+      height: 34px;
+      width: auto;
+      filter: drop-shadow(0 0 2px rgba(247, 147, 30, 0.3));
+    }
+    .nav-logo span { color: #f7931e; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: #aaa; font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: #f7931e; text-decoration: none; }
+    .nav-dl {
+      background: #f7931e; color: #0f0f0f;
+      font-size: 13px; font-weight: 700;
+      padding: 7px 16px; border-radius: 6px;
+      transition: background .15s;
+    }
+    .nav-dl:hover { background: #ffa94d; text-decoration: none; }
+
+    section { padding: 80px 32px; max-width: 960px; margin: 0 auto; }
+
+    #download {
+      text-align: center;
+    }
+    #download h1 {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 900;
+      color: #e0e0e0;
+      margin-bottom: 8px;
+    }
+    #download h1 span { color: #f7931e; }
+    #download .sub {
+      color: #aaa;
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+    }
+
+    .dl-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .dl-card {
+      background: #141414;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: border-color .2s, transform .2s;
+    }
+    .dl-card:hover {
+      border-color: #f7931e;
+      transform: translateY(-4px);
+    }
+    .dl-card .os-icon {
+      font-size: 42px;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .dl-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #e0e0e0;
+      margin-bottom: 6px;
+    }
+    .dl-card .version {
+      font-size: .85rem;
+      color: #666;
+      margin-bottom: 12px;
+    }
+    .dl-card p {
+      font-size: .88rem;
+      color: #aaa;
+      margin-bottom: 16px;
+    }
+    .dl-card .file-size {
+      font-size: .8rem;
+      color: #666;
+      margin-bottom: 16px;
+    }
+    .dl-card code {
+      display: block;
+      background: #0a0a0a;
+      color: #ffb347;
+      font-family: "Consolas", monospace;
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 5px;
+      margin-bottom: 18px;
+      border: 1px solid #2a2a2a;
+    }
+    .btn-download {
+      display: inline-block;
+      background: #f7931e;
+      color: #0f0f0f;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 12px 32px;
+      border-radius: 8px;
+      transition: background .15s;
+    }
+    .btn-download:hover {
+      background: #ffa94d;
+      text-decoration: none;
+    }
+
+    .requirements {
+      margin-top: 48px;
+      background: #141414;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+    .requirements h3 {
+      color: #f7931e;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+    .requirements ul {
+      list-style: none;
+      color: #aaa;
+      font-size: .9rem;
+    }
+    .requirements ul li {
+      padding: 4px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    .requirements ul li::before {
+      content: "▸";
+      color: #f7931e;
+      position: absolute;
+      left: 0;
+    }
+
+    footer {
+      border-top: 1px solid #2a2a2a;
+      padding: 28px 32px;
+      text-align: center;
+      color: #555;
+      font-size: .82rem;
+    }
+    footer a { color: #777; }
+    footer a:hover { color: #f7931e; }
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin: 8px 0 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .dl-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <img src="https://i.ibb.co/PZXQDspk/litefile-logo.png" alt="LiteFile Logo" />
+    <span>Lite</span>File
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="download.html">Download</a></li>
+    <li><a href="premium.html">Premium</a></li>
+    <li><a href="support.html">Support</a></li>
+  </ul>
+  <a href="download.html" class="nav-dl">Download</a>
+</nav>
+
+<section id="download">
+  <h1>Download <span>LiteFile</span></h1>
+  <p class="sub">Windows only · Free forever</p>
+
+  <div class="dl-grid">
+    <div class="dl-card">
+      <span class="os-icon">🪟</span>
+      <h3>LiteFile Installer</h3>
+      <div class="version">Version 2.0.0</div>
+      <p>Full installer for Windows 10/11. Includes all features.</p>
+      <div class="file-size">📦 8.2 MB</div>
+      <code>LiteFile_Setup_v2.0.0.exe</code>
+      <a href="https://sourceforge.net/projects/litefile/" target="_blank" class="btn-download">
+        Download from SourceForge
+      </a>
+    </div>
+  </div>
+
+  <div class="requirements">
+    <h3>📋 System Requirements</h3>
+    <ul>
+      <li>Windows 10 or Windows 11 (64-bit recommended)</li>
+      <li>100 MB free disk space</li>
+      <li>2 GB RAM (4 GB recommended for large archives)</li>
+      <li>No additional dependencies required</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div style="margin-bottom:8px;font-size:16px;font-weight:800;color:#666">
+    Lite<span style="color:#f7931e">File</span>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="download.html">Download</a>
+    <a href="premium.html">Premium</a>
+    <a href="support.html">Support</a>
+  </div>
+  <p>
+    <a href="mailto:litefile@proton.me">litefile@proton.me</a>
+    &nbsp;&middot;&nbsp;
+    &copy; 2026 Abdellah Agtaib — LiteFile Project
+  </p>
+</footer>
+
+</body>
+</html>
